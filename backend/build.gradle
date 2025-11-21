@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.12'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.meno'
+version = '0.0.1-SNAPSHOT'
+description = 'Meno is a web-based platform designed for local vendors, street food stalls, and small businesses to manage their daily menu and receive customer orders digitally. Vendors can create and update their menu, accept online orders, and process payments. All orders are automatically arranged in a first-come, first-serve (FCFS) queue so vendors can manage preparation efficiently. The platform aims to modernize small vendors by giving them an easy, organized, and scalable digital system without requiring technical knowledge.'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
